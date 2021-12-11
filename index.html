@@ -1,1 +1,335 @@
-Under Construction! 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HESAM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/font/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet"> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://use.fontawesome.com/193008b0be.js"></script>
+    <style>
+        html,body{
+            background: #55b9f3;   
+            direction: rtl; 
+            cursor: none;
+        }
+        .contain{
+            border-radius: 50px;
+            background: #55b9f3;
+            box-shadow:  20px 20px 60px #489dcf, 
+                        -20px -20px 60px #62d5ff;
+            border:none;
+        }
+        .item{
+            border-radius: 20px;
+            background: #55b9f3;
+            box-shadow:  9px 9px 18px #4eaae0, 
+                        -9px -9px 18px #5cc8ff;
+                        border:none;
+        }
+        .link{
+            cursor:pointer;
+        }
+        .typewriter{
+            color: rgb(0, 0, 0);
+            font-family: 'Roboto Mono', monospace;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+                typing 10s steps(70, end),
+                blink-caret 1s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #e19d26}
+        }
+        .ltr{
+            direction: ltr;
+            text-align: left;
+        }
+        .f-mono{
+            font-family: 'Roboto Mono', monospace !important;    
+        }
+        .show{
+            display: initial;
+        }
+        .hide{
+            display: none;
+        }
+        .cursor {
+			position: absolute;
+			background: #26c281;
+			width: 6px;
+			height: 6px;
+			border-radius: 100%;
+			z-index: 10000;
+			transform: scale(1);
+			user-select: none;
+			pointer-events: none;
+			transition: 0.3s ease-in-out transform, 0.2s ease-in-out opacity;
+		}
+		.cursor.active {
+			opacity: 0.5;
+			transform: scale(0);
+		}
+		.cursor.hovered {
+			opacity: 0.08;
+		}
+		.cursor-follower {
+			position: absolute;
+			background: #4bff54;
+			width: 20px;
+			height: 20px;
+			border-radius: 100%;
+			z-index: 10000;
+			transform: translatex(5px, 5px);
+			user-select: none;
+			pointer-events: none;
+			transition: 0.6s ease-in-out transform, 0.2s ease-in-out opacity;
+			mix-blend-mode: difference;
+		}
+		.cursor-follower.active {
+			opacity: 0.9;
+			transform: scale(3);
+		}
+		.cursor-follower.hovered {
+			opacity: 0.08;
+		}
+        .hover {
+			display: none;
+			position: absolute;
+			font-size: 15px;
+			z-index: 5;
+		}
+        
+    </style>
+</head>
+<body>
+    <h6 class="link hover h-home">خانه</h6>
+    <h6 class="link hover h-res">علایق پژوهشی</h6>
+    <h6 class="link hover h-con">تماس</h6>
+    <div class="cursor"></div>
+	<div class="cursor-follower"></div>
+    <div class="container justify-content-center align-content-center align-items-center">
+        <nav class="navbar navbar-expand-lg my-4">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active item p-3 link con">
+                  <img src="assets/images/phone.png" style="width:80px; height:auto;" alt="">
+                </li>
+                <li class="nav-item active item pl-3 pt-4 link res">
+                    <img src="assets/images/magnifier.png" style="width:60px; height:auto;" alt="">
+                  </li>
+                  <li class="nav-item active item p-3 link home">
+                    <img src="assets/images/home.png" style="width:70px; height:auto;" alt="">
+                  </li>
+              </ul>
+              
+            </div>
+          </nav>
+    <section id="home">
+        
+        <div class="row justify-content-center align-content-center align-items-center my-4">
+            <img class="mt-4 link" src="assets/images/name.png" alt="">
+        </div>
+            <div class="row">
+                <h5 class="item text-ultralight px-4 py-2 m-4 link" onclick="$('#des').fadeToggle();">کیست؟</h5>
+            </div>
+            <div class="row justify-content-end" id="des">
+                <div class="ltr">
+                    <h6 class="f-mono typewriter">If you have to ask, you'll never know. If you know, you need only <a class="ask" style="color:white;" href="#">ask</a>.</h6>
+                </div>
+            </div>
+            <div class="row">
+                <h5 class="item text-ultralight px-4 py-2 m-4 link" onclick="$('#uni').fadeToggle();">کجاست؟</h5>
+            </div>
+            <div class="row justify-content-end" id="uni">
+                <div class="ltr">
+                    <h6 class="f-mono typewriter">Sharif University of Technology, Department of Computer Engineering.</h6>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="hide">
+            <div class="contain row rounded mt-sm-5 d-flex justify-content-center text-center">
+					<form action="form.php" method="POST">
+                        <h1 class="h3 my-3 text-bold text-white">بگو</h1>
+                    <div class="row">
+                        <div class="col-6">
+						    <input type="text" name="name" class="form-control item bg-white mb-4 text-center" placeholder="نام" required="">
+                        </div>
+                        <div class="col-6">
+                            <input type="email" name="email" class="form-control item bg-white mb-4 text-center" placeholder="ایمیل" required="" >
+                        </div>
+                    </div>
+                    <div class="row px-4">
+                        <input type="text" name="message" class="form-control item bg-white mb-4 text-center" placeholder="پیام" required="">
+                    </div>
+						<br/>
+						<button class="item py-2 px-4 mb-4 link" type="submit">ثبت</button>
+					</form>
+				</div>
+		
+        </section>
+        <section id="res" class="hide">
+            <div class="row">
+                <div class="col contain mx-4 p-4">
+                    <div class="row  justify-content-center">
+                        <h1><i class="fa fa-graduation-cap 4x"></i></h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h4>نظام آموزشی</h4>
+                        <p> چرا ما دانش‌آموزا و دنشجوا صرفا همیشه نسبت به وضعیتش اعتراض داریم و کاری نمیکنیم؟</p>
+                    </div>
+                </div>
+                <div class="col contain mx-4 p-4">
+                    <div class="row  justify-content-center">
+                        <h1><i class="fa fa-futbol-o 4x"></i></h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h4>آنالیز فوتبال</h4>
+                        <p>فکر نکنم بدونی مورینیو و اینتر دقیقا چطور یکی از بهترین بارسلونا های تاریخ رو تو سال 2010 بردن و قهرمان شدن!</p>
+                    </div>
+                </div>
+                <div class="col contain mx-4 p-4">
+                    <div class="row  justify-content-center">
+                        <h1><i class="fa fa-paint-brush 4x"></i></h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <h4>سیر تحول ذائقۀ بصری </h4>
+                        <p>چی شد که به اینجا رسیدیم:))</p>
+                    </div>
+                </div>
+            </div>
+            <h5 class="text-ultralight mt-4 text-center">تو خود حدیث مفصل بخوان از این مجمل!!</h5>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="fixed-bottom">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+</body>
+<script>
+    $('#uni').fadeOut();
+    $('#des').fadeOut();
+</script>
+<script>
+    var cursor = $(".cursor"),
+        follower = $(".cursor-follower");
+
+    var posX = 0,
+        posY = 0;
+
+    var mouseX = 0,
+        mouseY = 0;
+
+    TweenMax.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function () {
+            posX += (mouseX - posX) / 9;
+            posY += (mouseY - posY) / 9;
+
+            TweenMax.set(follower, {
+                css: {
+                    left: posX - 6,
+                    top: posY - 6
+                }
+            });
+            TweenMax.set(cursor, {
+                css: {
+                    left: mouseX,
+                    top: mouseY
+                }
+            });
+        }
+    });
+
+    $(document).on("mousemove", function (e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+    });
+
+    $(".link").on("mouseenter", function () {
+        cursor.addClass("active");
+        follower.addClass("active");
+    });
+
+    $(".link").on("mouseleave", function () {
+        cursor.removeClass("active");
+        follower.removeClass("active");
+    });
+</script>
+<script>
+    function hovern(bg, layer, e) {
+        var p = $(bg).offset();
+        if ((e.pageX >= p.left) && (e.pageY >= p.top) && (e.pageX <= (p.left + $(bg).width())) && (e.pageY <= (p.top + $(bg).height()))) {
+            $(layer).css('display', 'initial');
+            $(layer).css('left', e.pageX - $(layer).width() / 2 + "px");
+            $(layer).css('top', e.pageY - $(layer).height() / 2 + "px");
+            $(layer).css('cursor', 'none');
+        }
+        else {
+            $(layer).css('display', 'none');
+        }
+    }
+    $(document).mousemove(function (e) {
+        hovern('.home', '.h-home', e);
+        hovern('.res', '.h-res', e);
+        hovern('.con', '.h-con', e);
+    });
+    $(".h-home").click(function(){
+       $("#home").fadeIn(); 
+       $("#contact").css("display", "none");
+       $("#res").css("display", "none"); 
+    });
+    $(".h-con").click(function(){
+        $("#contact").fadeIn(); 
+        $("#home").css("display", "none");
+       
+       $("#res").css("display", "none");
+    });
+    $(".h-res").click(function(){
+        $("#res").fadeIn(); 
+        $("#home").css("display", "none");
+       $("#contact").css("display", "none");
+    });
+    $(".ask").click(function(){
+        $("#contact").fadeIn(); 
+        $("#home").css("display", "none");
+       
+       $("#res").css("display", "none");
+    });  
+</script>
+</html>
