@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESAM</title>
+	<link rel="stylesheet" href="assets/css/images.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<link rel="stylesheet" href="assets/css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/font/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet"> 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="https://use.fontawesome.com/193008b0be.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet"> 
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://use.fontawesome.com/193008b0be.js"></script>
     <style>
         html,body{
             background: #55b9f3;   
@@ -121,7 +122,7 @@
 </head>
 <body>
     <h6 class="link hover h-home">خانه</h6>
-    <h6 class="link hover h-res">علایق پژوهشی</h6>
+    <h6 class="link hover h-res">نمونه کار</h6>
     <h6 class="link hover h-con">تماس</h6>
     <div class="cursor"></div>
 	<div class="cursor-follower"></div>
@@ -134,15 +135,16 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active item p-3 link con">
-                  <img src="assets/images/phone.png" style="width:80px; height:auto;" alt="">
-                </li>
+				<li class="nav-item active item p-3 link home">
+                    <img src="assets/images/home.png" style="width:70px; height:auto;" alt="">
+                  </li>             
+			 
                 <li class="nav-item active item pl-3 pt-4 link res">
                     <img src="assets/images/magnifier.png" style="width:60px; height:auto;" alt="">
                   </li>
-                  <li class="nav-item active item p-3 link home">
-                    <img src="assets/images/home.png" style="width:70px; height:auto;" alt="">
-                  </li>
+                 <li class="nav-item active item p-3 link con">
+                  <img src="assets/images/phone.png" style="width:80px; height:auto;" alt="">
+                </li> 
               </ul>
               
             </div>
@@ -160,74 +162,118 @@
                     <h6 class="f-mono typewriter">If you have to ask, you'll never know. If you know, you need only <a class="ask" style="color:white;" href="#">ask</a>.</h6>
                 </div>
             </div>
-            <div class="row">
-                <h5 class="item text-ultralight px-4 py-2 m-4 link" onclick="$('#uni').fadeToggle();">کجاست؟</h5>
-            </div>
-            <div class="row justify-content-end" id="uni">
-                <div class="ltr">
-                    <h6 class="f-mono typewriter">Sharif University of Technology, Department of Computer Engineering.</h6>
-                </div>
-            </div>
+            
         </section>
         <section id="contact" class="hide">
-            <div class="contain row rounded mt-sm-5 d-flex justify-content-center text-center">
-					<form action="form.php" method="POST">
-                        <h1 class="h3 my-3 text-bold text-white">بگو</h1>
-                    <div class="row">
-                        <div class="col-6">
-						    <input type="text" name="name" class="form-control item bg-white mb-4 text-center" placeholder="نام" required="">
-                        </div>
-                        <div class="col-6">
-                            <input type="email" name="email" class="form-control item bg-white mb-4 text-center" placeholder="ایمیل" required="" >
-                        </div>
-                    </div>
-                    <div class="row px-4">
-                        <input type="text" name="message" class="form-control item bg-white mb-4 text-center" placeholder="پیام" required="">
-                    </div>
-						<br/>
-						<button class="item py-2 px-4 mb-4 link" type="submit">ثبت</button>
-					</form>
+            <div style="border-radius:20px;" class="contain row mt-sm-5 d-flex justify-content-center text-center">
+
+             <h1 class="h3 my-3 text-bold text-white f-mono">hesamsoleymani20@gmail.com</h1>
+             <h1 class="h3 my-3 text-bold text-white f-mono">@sehesamso</h1>
+
 				</div>
 		
         </section>
         <section id="res" class="hide">
-            <div class="row">
-                <div class="col contain mx-4 p-4">
-                    <div class="row  justify-content-center">
-                        <h1><i class="fa fa-graduation-cap 4x"></i></h1>
-                    </div>
-                    <div class="row justify-content-center">
-                        <h4>نظام آموزشی</h4>
-                        <p> چرا ما دانش‌آموزا و دنشجوا صرفا همیشه نسبت به وضعیتش اعتراض داریم و کاری نمیکنیم؟</p>
-                    </div>
-                </div>
-                <div class="col contain mx-4 p-4">
-                    <div class="row  justify-content-center">
-                        <h1><i class="fa fa-futbol-o 4x"></i></h1>
-                    </div>
-                    <div class="row justify-content-center">
-                        <h4>آنالیز فوتبال</h4>
-                        <p>فکر نکنم بدونی مورینیو و اینتر دقیقا چطور یکی از بهترین بارسلونا های تاریخ رو تو سال 2010 بردن و قهرمان شدن!</p>
-                    </div>
-                </div>
-                <div class="col contain mx-4 p-4">
-                    <div class="row  justify-content-center">
-                        <h1><i class="fa fa-paint-brush 4x"></i></h1>
-                    </div>
-                    <div class="row justify-content-center">
-                        <h4>سیر تحول ذائقۀ بصری </h4>
-                        <p>چی شد که به اینجا رسیدیم:))</p>
-                    </div>
-                </div>
-            </div>
-            <h5 class="text-ultralight mt-4 text-center">تو خود حدیث مفصل بخوان از این مجمل!!</h5>
-        </section>
+		  <button style="background:#55b9f3; border:solid; border-color:white; border-size:5px; border-radius:20px 20px 0 0; direction:ltr; position:fixed; bottom:0; left:50%; transform:translateX(-50%); z-index:750; font-weight:bold;" id="shuffle" class="p-3 link f-mono">
+			Let's shuffle!
+		  </button>
+         <div class="kapsayici">
+			<div class="ic_kapsayici">
+				<!--<div class="kapsul item">
+					<div class="urun_aciklama item p-2">
+						<div class="urun_resim"> 
+							<img src="assets/images/portfolio/Kia.jpg" >
+						</div>				
+						<p style="opacity:0.7; margin-bottom:0; margin-top:10px; font-weight:bold;">
+							
+						</p>
+					</div>
+					</div>-->
+		</div>   
+		</section>
     </div>
+	<script>
+		$(document).ready(function(){
+			
+			const imgs = [
+			['Kia.jpg','Kia Clock Gallery'],
+			['LogicalMadness.jpg','LogicalMadness Game Studio'],
+			['MehrAudiologyClinic.jpg','Mehr Audiology Clinic'],
+			['pragma.jpg','Pragma Academy'],
+			['talangor.jpg','talangor music band'],
+			['the source.jpg','The Source Game'],
+			['TidaBand.jpg','Tida Music Band'],
+			['TorquoisTours.jpg','Torquois Tours'],
+			['Zeytoon.jpg','Zeytoon Game'],
+			['Fandogh.jpg','Fandogh Graphic Group'],
+			['Farzcode.jpg','Farzcode Contest'],
+			['Data Engineering.jpg',''],
+			['domino.jpg',''],
+			['honaroma.jpg',''],
+			['hyramid.jpg',''],
+			['hyramid2.jpg',''],
+			['infrastructure.jpg',''],
+			['olympiad.jpg',''],
+			['farzcode2.jpg',''],
+			['sampiad.jpg',''],
+			['tadris.jpg',''],
+			['tidaBandMembers.jpg',''],
+			['tidaWebsite.jpg',''],
+			['zeytoon2.jpg',''],
+			['zeytoon3.jpg',''],
+			];
+			function shuffle(array) {
+			  let currentIndex = array.length,  randomIndex;
+
+			  // While there remain elements to shuffle...
+			  while (currentIndex != 0) {
+
+				// Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex--;
+
+				// And swap it with the current element.
+				[array[currentIndex], array[randomIndex]] = [
+				  array[randomIndex], array[currentIndex]];
+			  }
+
+			  return array;
+			}
+			$("#shuffle").click(function(){
+				$(".ic_kapsayici").fadeOut();
+				$(".ic_kapsayici").promise().done(function(){
+					shuffle(imgs);
+					set();
+					$(".ic_kapsayici").fadeIn();
+				});
+			});
+			shuffle(imgs);
+				set();
+		function set() {
+			$(".ic_kapsayici").html("");
+			for(let i = 0; i < imgs.length ; i++ ){
+				if(imgs[i][1]=='') style = "border-radius:20px;";
+				else style = "border-radius:20px 20px 0px 0px;";
+				let img = $('<img style="'+style+'">');
+				let div1 = $("<div class='urun_resim'></div>");
+				let div2 = $("<div class='urun_aciklama item p-2'></div>");
+				let div3 = $("<div class='kapsul item m-4'></div>");
+				let p = $('<p class="f-mono" style="opacity:0.7; margin-bottom:0; margin-top:10px; ">'+imgs[i][1]+'</p>');
+				img.attr('src', 'assets/images/portfolio/'+imgs[i][0]);
+				div1.append(img);
+				div2.append(div1);
+				div2.append(p);
+				div3.append(div2);
+				$(".ic_kapsayici").append(div3);
+			}
+		}
+		});
+	</script>
     <br>
     <br>
     <br>
     <br>
-    <div class="fixed-bottom">
+    <div class="fixed-bottom" style="z-index:10;">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
